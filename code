@@ -1,0 +1,534 @@
+import java.util.*;
+public class BoxingGame
+{
+    public static void main()
+    {
+       Scanner scanner = new Scanner (System.in);
+        System.out.println("Press 1 to Start the Game!\nPress 2 for Tutorial\nPress 3 for Credit");
+       int start = scanner.nextInt();
+       while (start!=1 && start !=2 && start !=3)
+            {
+                System.out.println("You entered a wrong option \nEnter Again \nPress 1 to Start the Game!\nPress 2 for Tutorial\nPress 3 for Credit");
+                start = scanner.nextInt();
+            }
+       if(start ==1)
+       {
+            // Initialize player and opponent stats
+            int player1Health = 500;
+            int player1Jab = 20;
+            int player1Hook = 10;
+            int player1Uppercut = 50;
+            int player1Feint = 15;
+            int player1Block = 30;
+            int player1Sweep = 20;
+            int player1Kick = 25;
+            int player1Heal = 30;
+            String player1 =
+            " ______________\n" +
+            " |            |\n" +
+            " | [o]   [o]  |\n" +
+            " |            |\n" +
+            " |     o      |\n" +
+            " |  |-----|   |\n" +
+            " ------------- \n";
+            int player2Health = 540;
+            int player2Jab = 15;
+            int player2Hook = 15;
+            int player2Uppercut = 40;
+            int player2Feint = 10;
+            int player2Block = 25;
+            int player2Sweep = 15;
+            int player2Kick = 20;
+            int player2Heal = 25;
+            String player2 =
+            " ______________\n" +
+            " |            |\n" +
+            " | [o]   [o]  |\n" +
+            " |            |\n" +
+            " |     o      |\n" +
+            " |  |-----|   |\n" +
+            " ------------- \n";
+            int player3Health = 440;
+            int player3Jab = 25;
+            int player3Hook = 5;
+            int player3Uppercut = 60;
+            int player3Feint = 5;
+            int player3Block = 20;
+            int player3Sweep = 10;
+            int player3Kick = 15;
+            int player3Heal = 20;
+            String player3 =
+            " ______________\n" +
+            " |            |\n" +
+            " | [o]   [o]  |\n" +
+            " |            |\n" +
+            " |     o      |\n" +
+            " |  |-----|   |\n" +
+            " ------------- \n";
+            String opponent1name ="Youmatiker";
+            int opponent1Health = 460;
+            int opponent1Jab = 15;
+            int opponent1Hook = 15;
+            int opponent1Uppercut = 45;
+            int opponent1Feint = 10;
+            int opponent1Block = 25;
+            int opponent1Sweep = 15;
+            int opponent1Kick = 20;
+            int opponent1Heal = 25;
+            String opponent1 =
+            " ______________\n" +
+            " |            |\n" +
+            " | 0       0  |\n" +
+            " |     O      |\n" +
+            " |            |\n" +
+            " |  [=====]   |\n" +
+            " ------------- \n";
+            String opponent2name ="Broless";
+            int opponent2Health = 530;
+            int opponent2Jab = 10;
+            int opponent2Hook = 20;
+            int opponent2Uppercut = 35;
+            int opponent2Feint = 5;
+            int opponent2Block = 20;
+            int opponent2Sweep = 10;
+            int opponent2Kick = 15;
+            int opponent2Heal = 20;
+            String opponent2 =
+            " ______________\n" +
+            " |            |\n" +
+            " | 0       0  |\n" +
+            " |     O      |\n" +
+            " |            |\n" +
+            " |  [=====]   |\n" +
+            " ------------- \n";
+            String opponent3name ="Navoneel";
+            int opponent3Health = 430;
+            int opponent3Jab = 20;
+            int opponent3Hook = 10;
+            int opponent3Uppercut = 55;
+            int opponent3Feint = 5;
+            int opponent3Block = 20;
+            int opponent3Sweep = 10;
+            int opponent3Kick = 15;
+            int opponent3Heal = 20;
+            String opponent3 =
+            " ______________\n" +
+            " |            |\n" +
+            " | 0       0  |\n" +
+            " |     O      |\n" +
+            " |            |\n" +
+            " |  [=====]   |\n" +
+            " ------------- \n";
+            String opponent4name ="[BOSS] Sanchayan";
+            int opponent4Health = 800;
+            int opponent4Jab = 30;
+            int opponent4Hook = 20;
+            int opponent4Uppercut = 80;
+            int opponent4Feint = 15;
+            int opponent4Block = 20;
+            int opponent4Sweep = 20;
+            int opponent4Kick = 35;
+            int opponent4Heal = 80;
+            String opponent4 =
+            " ______________\n" +
+            " |            |\n" +
+            " | 0       0  |\n" +
+            " |     O      |\n" +
+            " |            |\n" +
+            " |  [=====]   |\n" +
+            " ------------- \n";
+            String opponent69name ="{Super BOSS} Ujaan";
+            int opponent69Health = 1200;
+            int opponent69Jab = 30;
+            int opponent69Hook = 20;
+            int opponent69Uppercut = 80;
+            int opponent69Feint = 15;
+            int opponent69Block = 20;
+            int opponent69Sweep = 20;
+            int opponent69Kick = 35;
+            int opponent69Heal = 80;
+            String opponent69 =
+            " ______________\n" +
+            " |            |\n" +
+            " | 0       0  |\n" +
+            " |     O      |\n" +
+            " |            |\n" +
+            " |  [=====]   |\n" +
+            " ------------- \n";
+            // Select player
+            System.out.println("Select a player\n1) SwapFlip\n2) Robert\n3) Ryan\n Choose : ");
+            int playerNumber = scanner.nextInt();
+            while (playerNumber!=1 && playerNumber !=2 && playerNumber !=3)
+            {
+                System.out.println("You entered a wrong option \nEnter Again \nSelect a player\n1) SwapFlip\n2) Robert\n3) Ryan\n Choose : ");
+                playerNumber = scanner.nextInt();
+            }
+            int playerHealth = 0;
+            int playerJab = 0;
+            int playerHook = 0;
+            int playerUppercut = 0;
+            int playerFeint = 0;
+            int playerBlock = 0;
+            int playerSweep = 0;
+            int playerKick = 0;
+            int playerHeal = 0;
+            String player = "";
+            String opponentname = "";
+            if (playerNumber == 1)
+            {
+                playerHealth = player1Health;
+                playerJab = player1Jab;
+                playerHook = player1Hook;
+                playerUppercut = player1Uppercut;
+                playerFeint = player1Feint;
+                playerBlock = player1Block;
+                playerSweep = player1Sweep;
+                playerKick = player1Kick;
+                playerHeal = player1Heal;
+                player = player1;
+            }
+            else if (playerNumber == 2)
+            {
+                playerHealth = player2Health;
+                playerJab = player2Jab;
+                playerHook = player2Hook;
+                playerUppercut = player2Uppercut;
+                playerFeint = player2Feint;
+                playerBlock = player2Block;
+                playerSweep = player2Sweep;
+                playerKick = player2Kick;
+                playerHeal = player2Heal;
+                player = player2;
+            }
+            else if (playerNumber == 3)
+            {
+                playerHealth = player3Health;
+                playerJab = player3Jab;
+                playerHook = player3Hook;
+                playerUppercut = player3Uppercut;
+                playerFeint = player3Feint;
+                playerBlock = player3Block;
+                playerSweep = player3Sweep;
+                playerKick = player3Kick;
+                playerHeal = player3Heal;
+                player = player3;
+            }
+            System.out.println("You selected player " + playerNumber + ":");
+            System.out.println(player);
+            System.out.println("Health: " + playerHealth);
+            System.out.println("Jab: " + playerJab);
+            System.out.println("Hook: " + playerHook);
+            System.out.println("Uppercut: " + playerUppercut);
+            System.out.println("Feint: " + playerFeint);
+            System.out.println("Block: " + playerBlock);
+            System.out.println("Sweep: " + playerSweep);
+            System.out.println("Kick: " + playerKick);
+            System.out.println("Heal: " + playerHeal);
+            System.out.println();
+            // Select opponent
+            System.out.println("Select an opponent (Select a opponent\n1) Youmatiker\n2) Broless\n3) Navoneel\n4) [BOSS] Sanchayan");
+            int opponentNumber = scanner.nextInt();
+            while (opponentNumber!=1 && opponentNumber !=2 && opponentNumber !=3 && opponentNumber !=4 && opponentNumber!=69)
+            {
+                System.out.println("You entered a wrong option \nEnter Again \nSelect a opponent\n1) Youmatiker\n2) Broless\n3) Navoneel\n4) [BOSS] Sanchayan");
+                opponentNumber = scanner.nextInt();
+            }
+            int opponentHealth = 0;
+            int opponentJab = 0;
+            int opponentHook = 0;
+            int opponentUppercut = 0;
+            int opponentFeint = 0;
+            int opponentBlock = 0;
+            int opponentSweep = 0;
+            int opponentKick = 0;
+            int opponentHeal = 0;
+            String opponent = "";
+            if (opponentNumber == 1)
+            {
+                opponentHealth = opponent1Health;
+                opponentJab = opponent1Jab;
+                opponentHook = opponent1Hook;
+                opponentUppercut = opponent1Uppercut;
+                opponentFeint = opponent1Feint;
+                opponentBlock = opponent1Block;
+                opponentSweep = opponent1Sweep;
+                opponentKick = opponent1Kick;
+                opponentHeal = opponent1Heal;
+                opponent = opponent1;
+                opponentname=opponent1name;
+            }
+            else if (opponentNumber == 2)
+            {
+                opponentHealth = opponent2Health;
+                opponentJab = opponent2Jab;
+                opponentHook = opponent2Hook;
+                opponentUppercut = opponent2Uppercut;
+                opponentFeint = opponent2Feint;
+                opponentBlock = opponent2Block;
+                opponentSweep = opponent2Sweep;
+                opponentKick = opponent2Kick;
+                opponentHeal = opponent2Heal;
+                opponent = opponent2;
+                opponentname=opponent2name;
+            }
+            else if (opponentNumber == 3)
+            {
+                opponentHealth = opponent3Health;
+                opponentJab = opponent3Jab;
+                opponentHook = opponent3Hook;
+                opponentUppercut = opponent3Uppercut;
+                opponentFeint = opponent3Feint;
+                opponentBlock = opponent3Block;
+                opponentSweep = opponent3Sweep;
+                opponentKick = opponent3Kick;
+                opponentHeal = opponent3Heal;
+                opponent = opponent3;
+                opponentname=opponent3name;
+            }
+            else if (opponentNumber == 4)
+            {
+                opponentHealth = opponent4Health;
+                opponentJab = opponent4Jab;
+                opponentHook = opponent4Hook;
+                opponentUppercut = opponent4Uppercut;
+                opponentFeint = opponent4Feint;
+                opponentBlock = opponent4Block;
+                opponentSweep = opponent4Sweep;
+                opponentKick = opponent4Kick;
+                opponentHeal = opponent4Heal;
+                opponent = opponent4;
+                opponentname=opponent4name;
+            }
+            else if (opponentNumber == 69)
+            {
+                opponentHealth = opponent69Health;
+                opponentJab = opponent69Jab;
+                opponentHook = opponent69Hook;
+                opponentUppercut = opponent69Uppercut;
+                opponentFeint = opponent69Feint;
+                opponentBlock = opponent69Block;
+                opponentSweep = opponent69Sweep;
+                opponentKick = opponent69Kick;
+                opponentHeal = opponent69Heal;
+                opponent = opponent69;
+                opponentname=opponent69name;
+                System.out.println("You selected secret boss, the one and only Ujaan ");
+            }
+            System.out.println("You selected opponent " + opponentname + ":");
+            System.out.println(opponent);
+            System.out.println("Health: " + opponentHealth);
+            System.out.println("Jab: " + opponentJab);
+            System.out.println("Hook: " + opponentHook);
+            System.out.println("Uppercut: " + opponentUppercut);
+            System.out.println("Feint: " + opponentFeint);
+            System.out.println("Block: " + opponentBlock);
+            System.out.println("Sweep: " + opponentSweep);
+            System.out.println("Kick: " + opponentKick);
+            System.out.println("Heal: " + opponentHeal);
+            System.out.println();
+           
+            //omggggggggggggggg fighting system which makes my brain malfunction
+            int copyplayer1=0,copyplayer2=0,copyplayer3=0,copyplayer4=0,copyplayer6=0,copyplayer7=0,copyplayer8=0;
+            int rage=0,rage_count=0,ragestart=0;
+            int playerenergy=200,opponentenergy=200,movesad=0;
+            while (true) {
+                System.out.println("Player moves:");
+                System.out.println("1. Jab (" + playerJab + " damage)");
+                System.out.println("2. Hook (" + playerHook + " damage)");
+                System.out.println("3. Uppercut (" + playerUppercut + " damage)");
+                System.out.println("4. Feint (" + playerFeint + " damage)");
+                System.out.println("5. Block");
+                System.out.println("6. Sweep (" + playerSweep + " damage)");
+                System.out.println("7. Kick (" + playerKick + " damage)");
+                System.out.println("8. Heal (" + playerHeal + " health)\n\n");
+                System.out.println("Player energy: " + playerenergy + "  Opponent energy: " + opponentenergy);
+                int rage_meter = 0;
+                // Player turn
+                System.out.println("Your turn. Choose a move:");
+                int playerMove = scanner.nextInt();
+                while (playerMove != 1 && playerMove != 2 && playerMove != 3 && playerMove != 4 && playerMove != 5 && playerMove != 6 && playerMove != 7 && playerMove != 8) {
+                    System.out.println("You entered a wrong option \nEnter Again \nYour turn. Choose a move:");
+                    playerMove = scanner.nextInt();
+                }
+                if (playerMove == 1 && playerenergy < 25) {
+                    System.out.println("You do not have enough energy for that move. Please choose another move.");
+                    playerMove = scanner.nextInt();
+                } else if (playerMove == 2 && playerenergy < 10) {
+                    System.out.println("You do not have enough energy for that move. Please choose another move.");
+                    playerMove = scanner.nextInt();
+                } else if (playerMove == 3 && playerenergy < 50) {
+                    System.out.println("You do not have enough energy for that move. Please choose another move.");
+                    playerMove = scanner.nextInt();
+                } else if (playerMove == 4 && playerenergy < 5) {
+                    System.out.println("You do not have enough energy for that move. Please choose another move.");
+                    playerMove = scanner.nextInt();
+                }
+                 else if (playerMove == 6 && playerenergy < 15) {
+                    System.out.println("You do not have enough energy for that move. Please choose another move.");
+                    playerMove = scanner.nextInt();
+                } else if (playerMove == 7 && playerenergy < 20) {
+                    System.out.println("You do not have enough energy for that move. Please choose another move.");
+                    playerMove = scanner.nextInt();
+                } else if (playerMove == 8 && playerenergy < 50) {
+                    System.out.println("You do not have enough energy for that move. Please choose another move.");
+                    playerMove = scanner.nextInt();
+                }
+                int opponentMove = (int)(Math.random() * 8) + 1;
+                // Check if opponent has enough energy for the move they chose
+                if (opponentMove == 1 && opponentenergy < 25) {
+                    opponentMove = (int)(Math.random() * 8) + 1;
+                } else if (opponentMove == 2 && opponentenergy < 10) {
+                    opponentMove = (int)(Math.random() * 8) + 1;
+                } else if (opponentMove == 3 && opponentenergy < 50) {
+                    opponentMove = (int)(Math.random() * 8) + 1;
+                } else if (opponentMove == 4 && opponentenergy < 5) {
+                    opponentMove = (int)(Math.random() * 8) + 1;
+                } else if (opponentMove == 6 && opponentenergy < 15) {
+                    opponentMove = (int)(Math.random() * 8) + 1;
+                } else if (opponentMove == 7 && opponentenergy < 20) {
+                    opponentMove = (int)(Math.random() * 8) + 1;
+                } else if (opponentMove == 8 && opponentenergy < 50) {
+                    opponentMove = (int)(Math.random() * 8) + 1;
+                }
+                if((opponentMove == 8)&&(opponentHealth>=1200))
+                {
+                    opponentHealth=1200;
+                }
+                if((playerMove ==8)&&(playerHealth >=1200))
+                {
+                    playerHealth=1200;
+                }
+                if (opponentMove == 5) 
+                {
+                    System.out.print("Opponent blocked your attack!");
+                } 
+                else 
+                {
+                    if(movesad!=10) 
+                    {
+                        if (playerMove == 1) 
+                        {
+                            System.out.println("You used Jab!");
+                            opponentHealth -= playerJab;
+                            playerenergy -= 20;
+                            playerenergy += 5;
+                        } 
+                        else if (playerMove == 2) 
+                        {
+                            System.out.println("You used Hook!");
+                            opponentHealth -= playerHook;
+                            playerenergy -= 10;
+                            playerenergy += 5;
+                        } 
+                        else if (playerMove == 3) 
+                        {
+                            System.out.println("You used Uppercut!");
+                            opponentHealth -= playerUppercut;
+                            playerenergy -= 50;
+                            playerenergy += 5;
+                        } 
+                        else if (playerMove == 4) 
+                        {
+                            System.out.println("You used Feint!");
+                            opponentHealth -= playerFeint;
+                            playerenergy -= 10;
+                            playerenergy += 5;
+                        } 
+                        else if (playerMove == 5) 
+                        {
+                            System.out.println("You used Block!");
+                            playerHealth -= 5;
+                            playerenergy += 10;
+                        } 
+                        else if (playerMove == 6) 
+                        {
+                            System.out.println("You used Sweep!");
+                            opponentHealth -= playerSweep;
+                            playerenergy -= 15;
+                            playerenergy += 5;
+                        } 
+                        else if (playerMove == 7) 
+                        {
+                            System.out.println("You used Kick!");
+                            opponentHealth -= playerKick;
+                            playerenergy -= 20;
+                            playerenergy += 5;
+                        } 
+                        else if (playerMove == 8) 
+                        {
+                            System.out.println("You used Heal!");
+                            playerHealth += playerHeal;
+                            playerenergy -= 50;
+                        }
+                    }
+                }
+                if (opponentMove == 1) 
+                {
+                    System.out.println("Opponent used Jab!");
+                    playerHealth -= opponentJab;
+                    opponentenergy -= 25;
+                    opponentenergy += 5;
+                } 
+                else if (opponentMove == 2) 
+                {
+                    System.out.println("Opponent used Hook!");
+                    playerHealth -= opponentHook;
+                    opponentenergy -= 10;
+                    opponentenergy += 5;
+                } 
+                else if (opponentMove == 3) 
+                {
+                    System.out.println("Opponent used Uppercut!");
+                    playerHealth -= opponentUppercut;
+                    opponentenergy -= 50;
+                    opponentenergy += 5;
+                } 
+                else if (opponentMove == 4) 
+                {
+                    System.out.println("Opponent used Feint!");
+                    playerHealth -= opponentFeint;
+                    opponentenergy -= 5;
+                    opponentenergy += 5;
+                } 
+                else if (playerMove == 5) 
+                {
+                    System.out.println("You used Block!");
+                    opponentHealth -= 5;
+                    opponentenergy += 10;
+                }     
+                else if (opponentMove == 6) 
+                {
+                    System.out.println("Opponent used Sweep!");
+                    playerHealth -= opponentSweep;
+                    opponentenergy -= 15;
+                    opponentenergy += 5;
+                } 
+                else if (opponentMove == 7) 
+                {
+                    System.out.println("Opponent used Kick!");
+                    playerHealth -= opponentKick;
+                    opponentenergy -= 20;
+                    opponentenergy += 5;
+                } 
+                else if (opponentMove == 8) 
+                {
+                    System.out.println("Opponent used Heal!");
+                    opponentHealth += opponentHeal;
+                    opponentenergy -= 50;
+                }
+                if (playerHealth <= 0 || opponentHealth <= 0) 
+                {
+                    break;
+                }
+            }
+            if (playerHealth <= 0) 
+            {
+                System.out.println("You lost!");
+            }
+            else if (opponentHealth <= 0) 
+            {
+                System.out.println("You won!");
+            }
+       }
+    }
+}
